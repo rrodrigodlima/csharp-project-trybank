@@ -27,7 +27,7 @@ public class Trybank
         {
             if (Bank[i, 0] == number && Bank[i, 1] == agency)
             {
-                throw new ArgumentException("A conta já está sendo usada");
+                throw new ArgumentException("A conta já está sendo usada!");
             }
         }
 
