@@ -40,7 +40,7 @@ public class Trybank
     }
 
     // 2. Construa a funcionalidade de fazer Login
-    public void Login(int number, int agency, int password)
+    public void Login(int number, int agency, int pass)
     {
         // Verifica se já há um usuário logado
         if (Logged)
@@ -53,7 +53,7 @@ public class Trybank
             if (Bank[i,0] == number && Bank[i,1] == agency)
             {
                 // Verifica a senha
-                if (Bank[i,2] == password)
+                if (Bank[i,2] == pass)
                 { // Login realizado com sucesso
                     Logged = true;
                     loggedUser = i;
