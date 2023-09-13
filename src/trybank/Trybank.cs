@@ -1,5 +1,4 @@
 ﻿namespace trybank;
-
 public class Trybank
 {
     public bool Logged;
