@@ -113,9 +113,22 @@ public class Trybank
     }
 
     // 6. Construa a funcionalidade de sacar dinheiro
-    public void Withdraw(int value)
+    public void Withdraw(int amount)
     {
-        throw new NotImplementedException();
+        // Verifica se há um usuário logado
+        if (!Logged)
+        {
+            throw new AccessViolationException("Usuário não está logado!");
+        }
+
+        // Verifica se o saldo é suficiente
+        if (Bank[loggedUser, 3] < amount)
+        {
+            throw new InvalidOperationException("Saldo insuficiente");
+        }
+
+        // Retira o valor do saldo da conta
+        Bank[loggedUser, 3] -= amount;
     }
 
     // 7. Construa a funcionalidade de transferir dinheiro entre contas
