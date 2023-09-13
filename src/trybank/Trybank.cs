@@ -100,9 +100,16 @@ public class Trybank
     }
 
     // 5. Construa a funcionalidade de depositar dinheiro
-    public void Deposit(int value)
+    public void Deposit(int amount)
     {
-        throw new NotImplementedException();
+        // Verifica se há um usuário logado
+        if (!Logged)
+        {
+            throw new AccessViolationException("Usuário não está logado!");
+        }
+
+        // Adiciona o valor ao saldo da conta
+        Bank[loggedUser, 3] += amount;
     }
 
     // 6. Construa a funcionalidade de sacar dinheiro
