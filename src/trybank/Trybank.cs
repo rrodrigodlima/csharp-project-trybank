@@ -27,7 +27,7 @@ public class Trybank
         {
             if (Bank[i, 0] == number && Bank[i, 1] == agency)
             {
-                throw new ArgumentException("A conta já está sendo usada!");
+                throw new ArgumentException("A conta já está sendo usada");
             }
         }
 
@@ -45,7 +45,7 @@ public class Trybank
         // Verifica se já há um usuário logado
         if (Logged)
         {
-            throw new AccessViolationException("Usuário já está logado!");
+            throw new AccessViolationException("Usuário já está logado");
         }
         // Procura pela conta
         for (int i = 0; i < registeredAccounts; i++)
@@ -61,12 +61,12 @@ public class Trybank
                 }
                 else
                 {
-                    throw new ArgumentException("Senha incorreta!");
+                    throw new ArgumentException("Senha incorreta");
                 }
             }
         }
         // Conta não encontrada
-        throw new ArgumentException("Agência + Conta não encontrada!");
+        throw new ArgumentException("Agência + Conta não encontrada");
     }
 
     // 3. Construa a funcionalidade de fazer Logout
@@ -75,7 +75,7 @@ public class Trybank
         // Verifica se há um usuário logado
         if (!Logged)
         {
-            throw new AccessViolationException("Usuário não está logado!");
+            throw new AccessViolationException("Usuário não está logado");
         }
 
         // Altera o estado da variável Logged
@@ -92,7 +92,7 @@ public class Trybank
         // Verifica se há um usuário logado
         if (!Logged)
         {
-            throw new AccessViolationException("Usuário não está logado!");
+            throw new AccessViolationException("Usuário não está logado");
         }
 
         // Retorna o saldo da conta logada
@@ -105,7 +105,7 @@ public class Trybank
         // Verifica se há um usuário logado
         if (!Logged)
         {
-            throw new AccessViolationException("Usuário não está logado!");
+            throw new AccessViolationException("Usuário não está logado");
         }
 
         // Adiciona o valor ao saldo da conta
@@ -118,7 +118,7 @@ public class Trybank
         // Verifica se há um usuário logado
         if (!Logged)
         {
-            throw new AccessViolationException("Usuário não está logado!");
+            throw new AccessViolationException("Usuário não está logado");
         }
 
         // Verifica se o saldo é suficiente
@@ -137,7 +137,7 @@ public class Trybank
         // Verifica se há um usuário logado
         if (!Logged)
         {
-            throw new AccessViolationException("Usuário não está logado!");
+            throw new AccessViolationException("Usuário não está logado");
         }
 
         // Verifica se a conta de destino existe
@@ -160,10 +160,8 @@ public class Trybank
         }
 
         // Conta de destino não encontrada
-        throw new ArgumentException("Conta não encontrada!");
+        throw new ArgumentException("Conta não encontrada");
     }
-
-
 
 
 }
