@@ -54,8 +54,7 @@ public class Trybank
             {
                 // Verifica a senha
                 if (Bank[i,2] == password)
-                {
-                    // Login realizado com sucesso
+                { // Login realizado com sucesso
                     Logged = true;
                     loggedUser = i;
                     return;
