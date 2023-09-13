@@ -89,7 +89,14 @@ public class Trybank
     // 4. Construa a funcionalidade de checar o saldo
     public int CheckBalance()
     {
-        throw new NotImplementedException();
+        // Verifica se há um usuário logado
+        if (!Logged)
+        {
+            throw new AccessViolationException("Usuário não está logado!");
+        }
+
+        // Retorna o saldo da conta logada
+        return Bank[loggedUser, 3];
     }
 
     // 5. Construa a funcionalidade de depositar dinheiro
