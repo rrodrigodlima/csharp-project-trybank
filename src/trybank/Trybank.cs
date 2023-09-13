@@ -50,10 +50,10 @@ public class Trybank
         // Procura pela conta
         for (int i = 0; i < registeredAccounts; i++)
         {
-            if (Bank[i,0] == number && Bank[i,1] == agency)
+            if (Bank[i, 0] == number && Bank[i, 1] == agency)
             {
                 // Verifica a senha
-                if (Bank[i,2] == pass)
+                if (Bank[i, 2] == pass)
                 { // Login realizado com sucesso
                     Logged = true;
                     loggedUser = i;
@@ -72,8 +72,19 @@ public class Trybank
     // 3. Construa a funcionalidade de fazer Logout
     public void Logout()
     {
-        throw new NotImplementedException();
+        // Verifica se há um usuário logado
+        if (!Logged)
+        {
+            throw new AccessViolationException("Usuário não está logado!");
+        }
+
+        // Altera o estado da variável Logged
+        Logged = false;
+
+        // Altera o índice do usuário logado
+        loggedUser = -99;
     }
+
 
     // 4. Construa a funcionalidade de checar o saldo
     public int CheckBalance()
